@@ -1,0 +1,14 @@
+# Local development files and generated publication artifacts
+.vscode/
+tmp/
+_site/
+_publish/
+*.zip
+*-preview.png
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+Thumbs.db
+.DS_Store

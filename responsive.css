@@ -1,0 +1,140 @@
+/* Shared responsive layout for all lessons; loaded after page-specific styles. */
+html{scrollbar-gutter:stable}
+body{overflow-wrap:break-word}
+.wrap{width:100%;max-width:1600px;padding-inline:clamp(10px,2.3vw,36px)}
+.layout{grid-template-columns:minmax(0,1fr) minmax(230px,290px);gap:clamp(16px,2vw,28px)}
+.layout>*{min-width:0}
+header{height:auto;min-height:88px;gap:16px;padding-block:16px;flex-wrap:wrap}
+.brand,.intro>div{min-width:0}
+.intro{gap:14px}
+.intro p{max-width:none}
+.lesson-number{flex-shrink:0}
+nav.lesson-tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,155px),1fr));gap:6px}
+nav.lesson-tabs a{min-width:0;display:grid;place-items:center;min-height:44px;padding:10px 8px;font-size:12px}
+.lab-toolbar,.segmented,.tools{flex-wrap:wrap}
+.segmented{min-width:0}
+.segmented button,.tools button{min-height:44px}
+.tools{margin-inline-start:auto}
+.computer{width:100%;min-width:0}
+.screen{height:clamp(510px,65vh,720px)}
+.start-menu,.search-panel{max-height:calc(100% - 48px);overflow-y:auto;overscroll-behavior:contain}
+.start-content,.window-body,.app-content,.settings-nav,.system-side{min-width:0;min-height:0}
+.window-body,.app-content{overscroll-behavior:contain}
+.settings-page{grid-template-columns:minmax(135px,28%) minmax(0,1fr)}
+.system-layout{grid-template-columns:minmax(110px,25%) minmax(0,1fr)}
+.explorer-body{grid-template-columns:minmax(90px,23%) minmax(0,1fr)}
+.setting-grid,.settings-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
+.setting-tile,.settings-tiles button,.update-content,.storage-main,.drive-info{min-width:0;overflow-wrap:anywhere}
+.setting-tile>span:last-child{min-width:0}
+.dialog-actions,.disk-buttons,.word-top,.scenario-panel{flex-wrap:wrap}
+.dialog-actions button,.disk-buttons button{max-width:100%}
+.disk-table,.tm-table{table-layout:fixed;overflow-wrap:anywhere}
+.disk-table th,.disk-table td,.tm-table th,.tm-table td{vertical-align:top}
+.file-row .file-name{min-width:0;overflow-wrap:anywhere}
+.file-row .size{flex-shrink:0}
+.taskbar .start-button,.taskbar .task-app{flex-shrink:0}
+.taskbar .task-search{flex:1 1 120px;min-width:0;max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.clock{flex-shrink:0}
+.space-meter{flex-wrap:wrap}
+.space-meter .mini-disk{min-width:60px}
+.reorder-item>span{min-width:0}
+.reorder-item>div{flex-shrink:0}
+footer{flex-wrap:wrap;gap:10px;line-height:1.8}
+button,a,input,select,textarea{touch-action:manipulation}
+input,select,textarea{max-width:100%}
+
+@media(min-width:1400px){
+ .setting-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .screen{height:clamp(600px,70vh,820px)}
+}
+@media(max-width:1000px){
+ .layout{grid-template-columns:minmax(0,1fr)}
+ .sidebar{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+ .sidebar .note{grid-column:1/-1}
+ .steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .step{padding:0;min-width:0}
+ .step:before{display:none}
+}
+@media(max-width:600px){
+ header{min-height:74px;gap:10px}
+ .course-label{max-width:145px;font-size:10px;text-align:center}
+ .intro{padding-block:20px;align-items:flex-start}
+ .intro h1{font-size:clamp(22px,5.6vw,30px);line-height:1.5;letter-spacing:0}
+ .intro p{font-size:12px}
+ .lesson-number{font-size:38px}
+ nav.lesson-tabs{grid-template-columns:repeat(2,minmax(0,1fr));padding:5px}
+ nav.lesson-tabs a{font-size:11px}
+ .lab-toolbar{gap:8px}
+ .segmented{width:100%}
+ .segmented button{flex:1 1 0;padding:10px 6px;font-size:12px}
+ .computer{padding:5px;border-radius:12px}
+ .screen{height:560px;height:clamp(440px,76svh,640px)}
+ .settings-window,.window{inset:8px 6px 52px}
+ .settings-page,.system-layout{display:flex;flex-direction:column;height:auto;min-height:100%}
+ .settings-nav,.system-side{flex:none;padding:8px;display:flex;flex-wrap:wrap;gap:4px}
+ .settings-nav h3,.settings-nav .nav-search{display:none}
+ .settings-nav .nav-home{width:100%;padding:8px;min-height:44px}
+ .settings-nav .nav-item,.system-side button{width:auto;flex:1 1 120px;padding:9px 8px;min-height:44px;font-size:11px!important}
+ .system-side button{flex-basis:100px}
+ .update-content,.storage-main{padding:18px 12px}
+ .update-content h2,.storage-main h2{font-size:22px}
+ .update-content small,.storage-main p{font-size:12px}
+ .setting-grid,.settings-tiles{grid-template-columns:minmax(0,1fr);gap:6px}
+ .settings-home,.settings-tiles{padding:12px}
+ .setting-tile,.settings-tiles button{padding:12px;min-height:64px}
+ .setting-tile strong,.settings-tiles strong{font-size:13px}
+ .setting-tile small,.settings-tiles small{font-size:11px}
+ .explorer-body{grid-template-columns:minmax(0,1fr);height:auto}
+ .folder-nav{display:none}
+ .drives{padding:14px 10px}
+ .drive-info strong{font-size:12px}
+ .drive-info small{font-size:11px}
+ .drive-card{gap:8px}
+ .disk-table,.tm-table{font-size:11px}
+ .disk-table td,.disk-table th,.tm-table td,.tm-table th{padding:9px 4px}
+ .dialog-body{padding:12px;font-size:12px}
+ .disk-dialog{max-width:calc(100% - 12px);max-height:calc(100% - 64px)}
+ .file-row{font-size:11px;min-height:44px}
+ .cleanup-body{margin-inline:6px;padding-inline:7px}
+ .disk-buttons{gap:6px}
+ .disk-buttons button{flex:1 1 70px;min-width:0;min-height:44px}
+ .sidebar{grid-template-columns:minmax(0,1fr)}
+ .sidebar .note{grid-column:auto}
+ .lesson-card,.complete{padding:18px}
+ .lesson-guide .task-text h2{font-size:14px}
+ .quiz-opts button,.reorder-item button,.complete .primary{min-height:44px}
+ .reorder-item button{min-width:44px}
+ .scenario-panel{align-items:stretch;flex-direction:column}
+ .scenario-panel button{white-space:normal;flex-shrink:1}
+ .word-paper{padding:14px;font-size:12px}
+ .word-document{padding:12px}
+ .taskbar .task-app{width:34px}
+ .clock{padding-inline:6px;gap:5px;font-size:9px}
+ .clock>span{display:none}
+ .taskbar .start-button{width:44px}
+ .screen input,.screen select,.review-input{font-size:16px!important}
+}
+@media(max-width:360px){
+ .brand strong{font-size:17px}
+ .course-label{max-width:118px;font-size:9px}
+ .lesson-number{display:none}
+ .steps{grid-template-columns:minmax(0,1fr)}
+ .reorder-item{flex-wrap:wrap;gap:8px}
+ .reorder-item>div{margin-inline-start:auto}
+ .screen .task-search{font-size:9px!important;padding-inline:6px}
+ .space-meter>span{flex-basis:100%}
+}
+@media(pointer:coarse){
+ .screen .window-controls button,.window-titlebar button,.disk-title button{min-width:44px;min-height:44px}
+ .screen .titlebar,.window-titlebar,.disk-title{height:auto;min-height:44px;flex-shrink:0}
+ .screen .more,.screen .classic-btn,.screen .win-btn,.screen .context button,.screen .prop-tabs button,.screen .word-ribbon button,.screen .word-tools button{min-height:44px}
+ .screen .more{min-width:44px}
+ .storage-switch{min-height:44px}
+}
+/* Fullscreen height must win over every viewport breakpoint. */
+.computer.fullscreen,.computer:fullscreen{height:100vh;height:100dvh;padding:5px}
+.computer.fullscreen .screen,.computer:fullscreen .screen{height:calc(100vh - 10px);height:calc(100dvh - 10px)}
+@media(max-height:500px) and (orientation:landscape){
+ .screen{height:420px}
+ .computer.fullscreen .desktop-note,.computer:fullscreen .desktop-note{display:none}
+}

@@ -1,0 +1,60 @@
+/* School identity and glass surfaces, shared by every lesson. */
+:root{--ink:#262044;--muted:#625c79;--blue:#56349a;--line:rgba(111,88,157,.2);--green:#18735e}
+body{background:#eeeaf6;color:var(--ink);isolation:isolate}
+body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:radial-gradient(ellipse at 12% 12%,#d6c7f3 0,transparent 53%),radial-gradient(ellipse at 93% 65%,#c8e6ed 0,transparent 48%),linear-gradient(145deg,#f4effb,#e5e4f2 55%,#edf6f7)}
+body::after{content:"";position:fixed;left:50%;top:50%;width:min(76vw,720px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:url('assets/school-logo.png') center/contain no-repeat;opacity:.16;z-index:-1;pointer-events:none}
+.wrap>header{border-bottom:1px solid rgba(110,86,152,.18)}
+.brand .brandmark{width:55px;height:55px;flex-shrink:0;display:block;transform:none;border-radius:50%;background:#fff url('assets/school-logo.png') center/contain no-repeat;box-shadow:0 4px 15px #49316d24}
+.brandmark i{display:none}
+.brand strong{color:#3e266d}
+.brand small{color:#6c5c85;letter-spacing:0}
+.course-label{color:#51416f;background:rgba(255,255,255,.55);border-color:rgba(255,255,255,.85)}
+.kicker{color:#654099}
+.lesson-number{color:rgba(87,57,135,.22)}
+nav.lesson-tabs,.lesson-guide,.lesson-card,.note,.complete,.space-meter,.scenario-panel{
+ background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.88);
+ box-shadow:0 10px 32px rgba(56,33,98,.07),inset 0 1px 0 rgba(255,255,255,.95);
+ -webkit-backdrop-filter:blur(15px) saturate(135%);backdrop-filter:blur(15px) saturate(135%);
+}
+nav.lesson-tabs{border-radius:18px;padding:8px}
+nav.lesson-tabs a{color:#5c5073;border:1px solid transparent;transition:background .18s,border-color .18s}
+nav.lesson-tabs a:hover{background:rgba(255,255,255,.5);border-color:rgba(255,255,255,.8)}
+nav.lesson-tabs a.active{background:rgba(255,255,255,.9);color:#512b89;border-color:rgba(116,79,175,.2);box-shadow:0 4px 14px #4e326a12}
+.lesson-guide,.lesson-card,.complete{border-radius:18px}
+.lesson-guide .task-card{background:transparent}
+.lesson-guide .task-text h2{color:#302344}
+.lesson-guide .task-text small,.guide-status{color:#655178}
+.step-number{background:rgba(225,211,247,.65);color:#634296}
+.segmented{background:rgba(231,224,243,.75);border:1px solid #ffffffb3;border-radius:12px}
+.segmented .selected{background:rgba(255,255,255,.88);color:#583585}
+.tools button,.hint-btn{background:rgba(255,255,255,.72);border:1px solid #ffffffdc;color:#55426f;border-radius:10px}
+.tools button:hover,.hint-btn:hover{background:#fff}
+.computer{background:linear-gradient(145deg,rgba(109,87,145,.65),rgba(47,53,80,.84));border:1px solid #ffffffa8;box-shadow:0 22px 55px #39224d26,inset 0 1px 0 #ffffff99;border-radius:20px}
+.monitor-foot{background:#6c5d83}
+.lesson-card p,.note,.interaction-note{color:#625773}
+.step.active .step-dot{background:#65409c;border-color:#65409c;color:white}
+.progress-track{background:#ddd4ed}
+.progress-track div{background:linear-gradient(90deg,#7651ac,#64aaa6)}
+.guide-progress{background:#e5ddef;accent-color:#7651ac}
+.guide-progress::-webkit-progress-bar{background:#e5ddef}
+.guide-progress::-webkit-progress-value{background:linear-gradient(90deg,#7651ac,#64aaa6)}
+.guide-progress::-moz-progress-bar{background:#7651ac}
+.complete{background:rgba(241,253,248,.74)}
+.next-lesson-link{background:#65409c;box-shadow:0 5px 14px #65409c22}
+.next-lesson-link:hover{background:#4f2e80}
+.quiz-opts button,.reorder-item{background:rgba(255,255,255,.76)}
+footer{color:#655773}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+ nav.lesson-tabs,.lesson-guide,.lesson-card,.note,.complete,.space-meter,.scenario-panel{background:rgba(250,248,255,.94)}
+}
+@media(max-width:600px){
+ body::after{width:90vw;opacity:.13}
+ nav.lesson-tabs,.lesson-guide,.lesson-card,.note,.complete,.space-meter,.scenario-panel{-webkit-backdrop-filter:blur(9px);backdrop-filter:blur(9px)}
+ .brand .brandmark{width:46px;height:46px}
+ .computer{border-radius:14px}
+}
+@media(prefers-reduced-transparency:reduce){
+ nav.lesson-tabs,.lesson-guide,.lesson-card,.note,.complete,.space-meter,.scenario-panel{background:#f8f6fc;-webkit-backdrop-filter:none;backdrop-filter:none}
+ body::after{opacity:.07}
+}
+@media print{body{background:white}body::before,body::after{display:none}}
